@@ -1,23 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-# Copyright 2023 The HuggingFace Inc. team. All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-"""
-Training the Whisper model for sequence to sequence speech recognition via teacher-student distillation.
-"""
-# You can also adapt this script for your own distillation tasks. Pointers for this are left as comments.
-
 import logging
 import os
 import re
@@ -62,15 +44,8 @@ from transformers import (
     set_seed,
 )
 from transformers.modeling_outputs import BaseModelOutput
-from transformers.models.whisper.english_normalizer import BasicTextNormalizer, EnglishTextNormalizer
-from transformers.utils import check_min_version
-from transformers.utils.versions import require_version
-
-
-# Will error if the minimal version of Transformers is not installed. Remove at your own risks.
-check_min_version("4.34.0.dev0")
-
-require_version("datasets>=2.14.6", "To fix: `pip install --upgrade datasets`")
+from transformers.models.whisper.english_normalizer import BasicTextNormalizer, \
+    EnglishTextNormalizer
 
 logger = get_logger(__name__)
 
